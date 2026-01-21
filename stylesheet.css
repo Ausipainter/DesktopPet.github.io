@@ -57,11 +57,10 @@
     margin-right:30px;
 
 }
-.navbar h1 {
+#centerLogo {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    font-family: 'Trebuchet MS', 'Arial Rounded MT Bold', sans-serif;
-    text-transform: uppercase;
+    
     margin: 0;
 }
