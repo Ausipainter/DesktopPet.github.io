@@ -1,14 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>Tolabra</title>
-    <link rel="stylesheet" href="stylesheet.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tolabra</title>
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
 <body>
-    <header>
-    </header>
-    
-    
+    <section>
+        <!-- Background columns with images -->
+        <div class="columns-container" id="columns">
+            <div class="column" data-speed="0.5"></div>
+            <div class="column" data-speed="-0.3"></div>
+            <div class="column" data-speed="0.7"></div>
+            <div class="column" data-speed="-0.4"></div>
+            <div class="column" data-speed="0.6"></div>
+        </div>
+
+        <!-- Your page content -->
+        <div class="content">
+            <div class="section">
+            <h1>Welcome</h1>
+            <p>Your content     goes here. Scroll down to see the images move!</p>
+            </div>
+
+            <div class="section">
+            <h1>More Content</h1>
+            <p>Keep scrolling...</p>
+            </div>
+        </div>
+
+        <script>
+            const columns = document.querySelectorAll('.column');
+            
+            window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            
+            columns.forEach(column => {
+                const speed = parseFloat(column.dataset.speed);
+                const movement = scrolled * speed;
+                
+                // Infinite scroll by adjusting background position
+                column.style.backgroundPosition = `center ${-movement}px`;
+            });
+            });
+        </script>
+    </section>
 </body>
-</html>
+</html>s

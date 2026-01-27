@@ -1,5 +1,82 @@
 
 @font-face {
-  font-family: myFont; /* set name */
-  src: url(sansation_light.woff); /* url of the font */
+  font-family: PokerFont; /* set name */
+  src: url(CustomFonts/CoffeetinInitials-YXJ2.ttf); /* url of the font */
+}
+nav{
+    font-family: PokerFont;
+    font-size: 200px;
+}
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    background: #000;
+}
+
+.columns-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    z-index: -1;
+    background: #ffffff;
+}
+
+.column {
+    flex: 1;
+    height: 100%;
+    position: relative;
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+    background-position: center top;
+    image-rendering: pixelated;
+    -ms-interpolation-mode: bicubic;
+    
+
+}
+
+/* First image */
+.column:nth-child(odd) {
+    background-image: url(Images/combined_column.png);
+}
+
+/* Second image */
+.column:nth-child(even) {
+    background-image: url(Images/combined_column2.png);
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    padding: 50px;
+    min-height: 300vh;
+}
+
+.section {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+p {
+    color: #666;
+    line-height: 1.6;
 }
