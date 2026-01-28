@@ -1,16 +1,12 @@
-
 @font-face {
-  font-family: PokerFont; /* set name */
-  src: url(CustomFonts/CoffeetinInitials-YXJ2.ttf); /* url of the font */
+    font-family: PokerFont; 
+    src: url(CustomFonts/PokerKingsRegular-36K8.ttf);
 }
-nav{
-    font-family: PokerFont;
-    font-size: 200px;
-}
+
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
@@ -39,44 +35,131 @@ body {
     background-position: center top;
     image-rendering: pixelated;
     -ms-interpolation-mode: bicubic;
-    
-
+    opacity: 0.6;
 }
 
-/* First image */
 .column:nth-child(odd) {
     background-image: url(Images/combined_column.png);
 }
 
-/* Second image */
 .column:nth-child(even) {
     background-image: url(Images/combined_column2.png);
 }
 
-.content {
-    position: relative;
-    z-index: 1;
-    padding: 50px;
-    min-height: 300vh;
-}
-
-.section {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 40px;
-    margin-bottom: 30px;
-    border-radius: 10px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+header {
     text-align: center;
 }
 
-h1 {
-    color: #333;
-    margin-bottom: 20px;
+header img {
+    image-rendering: pixelated;
+    width: 50%;
+    max-width: 80vw;
+    margin-top: 10vh;
+    padding: 2vw;
+    border-radius: 1vw;
+    border: black double 2vw;
+    background-color: white;
 }
 
-p {
-    color: #666;
-    line-height: 1.6;
+.download {
+    text-align: center;
+    margin: 2vh 0;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 1.5vh 3vw;
+    border: 0.3vw solid red;
+    border-radius: 0.5vw;
+    text-decoration: none;
+    color: red;
+    font-size: clamp(16px, 2.5vw, 24px);
+    font-family: PokerFont;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: red;
+    color: white;
+    transform: scale(1.05);
+}
+
+.displayCards {
+    text-align: center;
+}
+
+.about {
+    position: relative;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.about img {
+    width: 100%;
+    height: auto;
+    display: block;
+    image-rendering: pixelated;
+    margin-top: 10vh;
+}
+
+.about-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    color: red;
+    text-align: center;
+}
+
+.about-text h1 {
+    margin-top: 20%;
+    font-family: PokerFont;
+    font-size: clamp(40px, 15vw, 200px);
+    color: red;
+}
+
+.about-text h3 {
+    font-size: clamp(20px, 4vw, 50px);
+    margin-top: 2vh;
+}
+
+.about-text p {
+    color: red;
+    font-size: clamp(14px, 2.5vw, 30px);
+    max-width: 80%;
+    padding: 0 2vw;
+}
+
+.about-text h2 {
+    font-size: clamp(20px, 3.5vw, 40px);
+    margin: 10vh 0;
+}
+
+.textCards {
+    margin-top: 20vh;
+    width: 70%;
+    image-rendering: pixelated;
+}
+
+#credits {
+    text-align: center;
+}
+
+
+@media (max-width: 768px) {
+    header img {
+    width: 80%;
+    margin-top: 5vh;
+    }
+
+    .about {
+    width: 90%;
+    }
+
+    .download-btn {
+    padding: 2vh 5vw;
+    }
 }

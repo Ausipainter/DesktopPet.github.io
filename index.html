@@ -7,44 +7,59 @@
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
 <body>
-    <section>
-        <!-- Background columns with images -->
-        <div class="columns-container" id="columns">
-            <div class="column" data-speed="0.5"></div>
-            <div class="column" data-speed="-0.3"></div>
-            <div class="column" data-speed="0.7"></div>
-            <div class="column" data-speed="-0.4"></div>
-            <div class="column" data-speed="0.6"></div>
-        </div>
+  <section>
+    <!-- Background columns with images -->
+    <div class="columns-container" id="columns">
+      <div class="column" data-speed="0.5"></div>
+      <div class="column" data-speed="-0.3"></div>
+      <div class="column" data-speed="0.7"></div>
+      <div class="column" data-speed="-0.4"></div>
+      <div class="column" data-speed="0.6"></div>
+    </div>
 
-        <!-- Your page content -->
-        <div class="content">
-            <div class="section">
-            <h1>Welcome</h1>
-            <p>Your content     goes here. Scroll down to see the images move!</p>
-            </div>
+    <script>
+      const columns = document.querySelectorAll('.column');
+      
+      window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        
+        columns.forEach(column => {
+          const speed = parseFloat(column.dataset.speed);
+          const movement = scrolled * speed;
+          
+          // Infinite scroll by adjusting background position
+          column.style.backgroundPosition = `center ${-movement}px`;
+        });
+      });
+    </script>
+  </section>
 
-            <div class="section">
-            <h1>More Content</h1>
-            <p>Keep scrolling...</p>
-            </div>
-        </div>
+  <header>
+    <nav></nav>
+    <img src="Images/Logo.png" alt="Tolabra Logo">
+  </header>
 
-        <script>
-            const columns = document.querySelectorAll('.column');
-            
-            window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            
-            columns.forEach(column => {
-                const speed = parseFloat(column.dataset.speed);
-                const movement = scrolled * speed;
-                
-                // Infinite scroll by adjusting background position
-                column.style.backgroundPosition = `center ${-movement}px`;
-            });
-            });
-        </script>
-    </section>
+  <div class="download">
+    <a href="https://github.com/eepy-sleepy1234/Barratlo/archive/refs/heads/main.zip" download class="download-btn">
+      Download Game
+    </a>
+  </div>
+
+  <section class="displayCards">
+    <div class="about">
+      <img src="Images/About.png" alt="About">
+      <div class="about-text">
+        <h1>About</h1>
+        <br>
+        <h3>What Is Talabro?</h3>
+        <br>
+        <p>Talabro is a fan made Balatro game made completly in the programming language Python using Pygame</p>
+      </div>
+    </div>
+
+    <div id="credits">
+      <img src="Images/Credits.png" class="textCards" alt="Credits">
+    </div>
+  </section>
 </body>
-</html>s
+</html>
