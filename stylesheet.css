@@ -107,6 +107,7 @@
 .nav-drawer.open .arrow {
     transform: rotate(180deg);
 }
+
 body {
     font-family: Arial, sans-serif;
     overflow-x: hidden;
@@ -128,20 +129,10 @@ body {
     flex: 1;
     height: 100%;
     position: relative;
-    background-repeat: repeat-y;
-    background-size: 100% auto;
-    background-position: center top;
+    overflow: hidden;
     image-rendering: pixelated;
     -ms-interpolation-mode: bicubic;
     opacity: 0.6;
-}
-
-.column:nth-child(odd) {
-    background-image: url(Images/combined_column.png);
-}
-
-.column:nth-child(even) {
-    background-image: url(Images/combined_column2.png);
 }
 
 header {
@@ -213,15 +204,22 @@ header img {
     justify-content: flex-start;
     color: red;
     text-align: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 5% 5%;
+    top:10%;
+    bottom: 10%;
+}
+
+.about-text::-webkit-scrollbar {
+    width: 10px;
 }
 
 .about img {
     margin-top: 10vh;  
 }
 
-
 .about-text h1 {
-    margin-top: 20%;
     font-family: PokerFont;
     font-size: clamp(40px, 15vw, 200px);
     color: red;
@@ -235,7 +233,7 @@ header img {
 .about-text p {
     color: red;
     font-size: clamp(14px, 2.5vw, 30px);
-    max-width: 80%;
+    max-width: 70%;
     padding: 0 2vw;
 }
 
@@ -250,36 +248,52 @@ header img {
     image-rendering: pixelated;
 }
 
-
-
-
 @media (max-width: 768px) {
     header img {
-    width: 80%;
-    margin-top: 5vh;
+        width: 80%;
+        margin-top: 5vh;
     }
 
     .about {
-    width: 90%;
+        width: 90%;
     }
 
     .download-btn {
-    padding: 2vh 5vw;
+        padding: 2vh 5vw;
     }
 }
-
-
 
 .credits-text {
     position: absolute;
     inset: 0;
+    top: 10%;
+    bottom: 10%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    color:black;
+    color: black;
     text-align: center;
-    
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.credits-text::-webkit-scrollbar {
+    width: 10px;
+}
+
+.credits-text::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.credits-text::-webkit-scrollbar-thumb {
+    background: black;
+    border-radius: 5px;
+}
+
+.credits-text::-webkit-scrollbar-thumb:hover {
+    background: #333;
 }
 
 .credits-text h1 {
@@ -310,8 +324,6 @@ header img {
     display: none; 
 }
 
-
-
 .nav-tooltip {
     position: fixed;
     background: black;
@@ -326,4 +338,3 @@ header img {
     transition: opacity 0.3s ease;
     opacity: 1;
 }
-
