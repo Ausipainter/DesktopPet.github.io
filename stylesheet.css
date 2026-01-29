@@ -159,25 +159,28 @@ header img {
     background-color: white;
 }
 
-.download {
+.button-container {
     text-align: center;
     margin: 2vh 0;
 }
 
-.download-btn {
-    display: inline-block;
+.download-btn, .github-btn {
+    display: block;
     padding: 1.5vh 3vw;
     border: 0.3vw solid red;
     border-radius: 0.5vw;
     text-decoration: none;
     color: red;
-    font-size: clamp(16px, 2.5vw, 24px);
+    font-size: clamp(64px, 2.5vw, 24px);
     font-family: PokerFont;
     background-color: white;
     transition: all 0.3s ease;
+    margin: 2vh auto;
+    margin-top:5vh;
+    width: fit-content;
 }
 
-.download-btn:hover {
+.download-btn:hover, .github-btn:hover {
     background-color: red;
     color: white;
     transform: scale(1.05);
@@ -211,6 +214,11 @@ header img {
     color: red;
     text-align: center;
 }
+
+.about img {
+    margin-top: 10vh;  
+}
+
 
 .about-text h1 {
     margin-top: 20%;
@@ -275,7 +283,7 @@ header img {
 }
 
 .credits-text h1 {
-    margin-top: 10%; 
+    margin-top: 20%; 
     font-family: PokerFont;
     font-size: clamp(30px, 10vw, 200px); 
 }
@@ -318,3 +326,4 @@ header img {
     transition: opacity 0.3s ease;
     opacity: 1;
 }
+
