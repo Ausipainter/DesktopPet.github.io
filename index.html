@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tolabra</title>
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <section>
-    <!-- Background columns with images -->
     <div class="columns-container" id="columns">
       <div class="column" data-speed="0.5"></div>
       <div class="column" data-speed="-0.3"></div>
@@ -16,26 +16,21 @@
       <div class="column" data-speed="-0.4"></div>
       <div class="column" data-speed="0.6"></div>
     </div>
-
-    <script>
-      const columns = document.querySelectorAll('.column');
-      
-      window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        
-        columns.forEach(column => {
-          const speed = parseFloat(column.dataset.speed);
-          const movement = scrolled * speed;
-          
-          // Infinite scroll by adjusting background position
-          column.style.backgroundPosition = `center ${-movement}px`;
-        });
-      });
-    </script>
   </section>
 
+  <nav class="navbar">
+    <div class="nav-drawer" id="navDrawer">
+      <button class="arrow-btn" id="arrowBtn">
+        <div class="arrow"></div>
+      </button>
+      <ul class="nav-items">
+        <li><a href="#about"><img src="Images/questionCard.png" alt="About" title="About"></a></li>
+        <li><a href="#credits"><img src="Images/Credits.png" alt="Credits" title="Credits"></a></li>
+      </ul>
+    </div>
+  </nav>
+
   <header>
-    <nav></nav>
     <img src="Images/Logo.png" alt="Tolabra Logo">
   </header>
 
@@ -46,7 +41,7 @@
   </div>
 
   <section class="displayCards">
-    <div class="about">
+    <div class="about" id="about">
       <img src="Images/About.png" alt="About">
       <div class="about-text">
         <h1>About</h1>
@@ -56,10 +51,38 @@
         <p>Talabro is a fan made Balatro game made completly in the programming language Python using Pygame</p>
       </div>
     </div>
+  </section>
 
-    <div id="credits">
+  <section class="displayCards">
+    <div class="credits" id="credits"> 
       <img src="Images/Credits.png" class="textCards" alt="Credits">
+      <div class="credits-text">
+        <h1>Credits</h1>
+        <br>
+        <h3>Who Made Talabro?</h3>
+        <br>
+        <h3>Lead Developer</h3>
+        <a href="https://github.com/eepy-sleepy1234"target = "_blank">Eepy-Sleepy1234</a>
+        <h3>Co-Developer</h3>
+        <a href="https://github.com/Ausipainter"target = "_blank">Ausipainter</a>
+        <h3>Main Game Code</h3>
+        <a href="https://github.com/eepy-sleepy1234"target = "_blank">Eepy-Sleepy1234</a>
+        <h3>UI Code</h3>
+        <a href="https://github.com/Ausipainter"target = "_blank">Ausipainter</a>
+        <h3>Main Game Artists</h3>
+        <a href="https://github.com/ToskeHilsi"target = "_blank">ToskeHilsi</a>
+        <a href="https://github.com/Ausipainter"target = "_blank">Ausipainter</a>
+        <h3>Additional Artists</h3>
+        <a href="https://github.com/eepy-sleepy1234"target = "_blank">Eepy-Sleepy1234</a>
+        <h3>Animator</h3>
+        <a href="https://github.com/Ausipainter"target = "_blank">Ausipainter</a>
+        <h3>Special Thanks</h3>
+        <a href="https://github.com/CreznDahuk" target = "_blank">CreznDahuk</a>
+      </div>
     </div>
   </section>
+
+ 
+
 </body>
 </html>

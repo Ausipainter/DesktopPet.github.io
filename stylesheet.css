@@ -9,6 +9,100 @@
     box-sizing: border-box;
 }
 
+.navbar {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 101;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    padding: 10px;
+}
+
+.nav-drawer {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border: none;
+    overflow: visible; 
+    transition: all 0.4s ease;
+}
+
+.nav-items {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    padding: 10px; 
+    max-width: 0;
+    opacity: 0;
+    transition: all 0.4s ease;
+    overflow: visible;
+    pointer-events: none; 
+}
+
+.nav-drawer.open .nav-items {
+    max-width: 800px;
+    opacity: 1;
+    padding: 10px;
+    pointer-events: auto; 
+}
+
+.nav-items li a {
+    display: block;
+}
+
+.nav-items li a img {
+    width: 100px;
+    height: auto;
+    image-rendering: pixelated;
+    transition: all 0.3s ease;
+    border: 3px solid red;
+    background: transparent;
+    display: block;
+    border-radius: 5px;
+}
+
+.nav-items li a img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.8); 
+}
+
+.arrow-btn {
+    width: 60px;  
+    height: 60px; 
+    background: black;
+    border: 3px solid red; 
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.arrow-btn:hover {
+    transform: scale(1.1);
+}
+
+.arrow-btn:hover .arrow {
+    border-left-color: red;
+}
+
+.arrow {
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;   
+    border-bottom: 15px solid transparent; 
+    border-left: 18px solid white;         
+    transition: all 0.3s ease;
+}
+
+.nav-drawer.open .arrow {
+    transform: rotate(180deg);
+}
 body {
     font-family: Arial, sans-serif;
     overflow-x: hidden;
@@ -89,18 +183,18 @@ header img {
     text-align: center;
 }
 
-.about {
+.displayCards {
     position: relative;
     width: 70%;
     margin: 0 auto;
 }
 
-.about img {
+.displayCards img {
     width: 100%;
     height: auto;
     display: block;
     image-rendering: pixelated;
-    margin-top: 10vh;
+    margin-top: 30vh;
 }
 
 .about-text {
@@ -144,9 +238,7 @@ header img {
     image-rendering: pixelated;
 }
 
-#credits {
-    text-align: center;
-}
+
 
 
 @media (max-width: 768px) {
@@ -162,4 +254,62 @@ header img {
     .download-btn {
     padding: 2vh 5vw;
     }
+}
+
+.credits-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    color:black;
+    text-align: center;
+}
+
+.credits-text h1 {
+    margin-top: 20%;
+    font-family: PokerFont;
+    font-size: clamp(40px, 15vw, 200px);
+   
+}
+
+.credits-text h3 {
+    font-size: clamp(20px, 4vw, 50px);
+    margin-top: 2vh;
+}
+
+.credits-text p {
+ 
+    font-size: clamp(14px, 2.5vw, 30px);
+    max-width: 80%;
+    padding: 0 2vw;
+}
+
+.credits-text h2 {
+    font-size: clamp(20px, 3.5vw, 40px);
+    margin: 10vh 0;
+}
+
+.credits-text a{
+    text-decoration: none;
+    font-size: clamp(20px, 2.5vw, 30px);
+}
+
+
+
+
+.nav-tooltip {
+    position: fixed;
+    background: black;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 2px solid red;
+    font-size: 14px;
+    pointer-events: none;
+    z-index: 102;
+    white-space: nowrap;
+    transition: opacity 0.3s ease;
+    opacity: 1;
 }
