@@ -7,6 +7,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    cursor: url('Images/Cursor.png'), pointer;
+
 }
 
 .navbar {
@@ -68,7 +70,8 @@
 .nav-items li a img:hover {
     transform: scale(1.1);
     filter: brightness(1.2);
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.8); 
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+    cursor: url('Images/CursorHover.png'), auto; 
 }
 
 .arrow-btn {
@@ -93,6 +96,7 @@
 
 .arrow-btn:hover .arrow {
     border-left-color: red;
+    cursor: url('Images/CursorHover.png'), auto; 
 }
 
 .arrow {
@@ -175,6 +179,7 @@ header img {
     background-color: red;
     color: white;
     transform: scale(1.05);
+    cursor: url('Images/CursorHover.png'), auto; 
 }
 
 .displayCards {
@@ -345,6 +350,7 @@ header img {
 .secret:hover {
     transition: all 0.4s ease;
     opacity: 0.5;
+    cursor: url('Images/CursorHover.png'), auto; 
 }
 #banana{
     opacity: 0;
@@ -357,4 +363,6 @@ header img {
 #banana:hover{
     opacity: 1;
     transition:all 0.4s ease;
+    cursor: url('Images/CursorHover.png'), auto; 
 }
+
