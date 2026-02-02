@@ -2,7 +2,6 @@ const columns = document.querySelectorAll('.column');
 
 const CHANCE_FOR_SPECIAL = 0.3;
 
-
 const webImages = [
     'UpsideDownJokerU.png',
     'InvincibleJokerU.png',
@@ -124,4 +123,62 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+let found = false
+const cube = document.getElementById('cube');
+const target = document.getElementById('target');
+const animations = document.getElementById('animation');
+let x = 100;
+let y = 100;
+const speed = 10;
+const cubeSize = 50;
+let cubeVisible = false; // Track if cube has been revealed
 
+function checkCollision(element1, element2) {
+    const rect1 = element1.getBoundingClientRect();
+    const rect2 = element2.getBoundingClientRect();
+    
+    return !(
+        rect1.right < rect2.left ||
+        rect1.left > rect2.right ||
+        rect1.bottom < rect2.top ||
+        rect1.top > rect2.bottom
+    );
+}
+
+document.addEventListener('keydown', (event) => {
+    // Make cube AND target visible on first arrow key press
+    if (!cubeVisible && ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(event.key)) {
+        cube.classList.add('visible');
+        target.classList.add('visible');
+        
+        
+
+        cubeVisible = true;
+    }
+    
+    if (event.key === 'ArrowUp') {
+        y -= speed;
+    } else if (event.key === 'ArrowDown') {
+        y += speed;
+    } else if (event.key === 'ArrowLeft') {
+        x -= speed;
+    } else if (event.key === 'ArrowRight') {
+        x += speed;
+    }
+    
+    // Keep cube on screen
+    x = Math.max(0, Math.min(window.innerWidth - cubeSize, x));
+    y = Math.max(0, Math.min(window.innerHeight - cubeSize, y));
+    
+    cube.style.top = y + 'px';
+    cube.style.left = x + 'px';
+    
+    if(!found){
+    if (checkCollision(cube, target)) {
+        console.log('Collision detected!');
+        alert('You found the secret!');
+        found = true
+        animations.classList.add('visible');
+        
+    }}
+});
