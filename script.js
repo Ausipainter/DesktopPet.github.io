@@ -124,3 +124,10 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+function superepicfunction(){
+    alert('Downloading Virus')
+
+}
+const superEpicButton = document.getElementById('epicButton')
+superEpicButton.addEventListener('click', superepicfunction)
