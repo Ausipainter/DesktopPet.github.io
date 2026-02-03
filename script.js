@@ -182,3 +182,26 @@ document.addEventListener('keydown', (event) => {
         
     }}
 });
+
+// Click anywhere animation
+document.addEventListener('click', function(e) {
+  // Get the animation element
+  const animation = document.getElementById('animation');
+  
+  // Position it where the click happened
+  animation.style.left = e.pageX + 'px';
+  animation.style.top = e.pageY + 'px';
+  
+  // Show the animation
+  animation.style.display = 'block';
+  animation.style.opacity = '1';
+  
+  // Hide it after a delay (adjust timing as needed)
+  setTimeout(function() {
+    animation.style.opacity = '0';
+  }, 1500); // Animation visible for 1.5 seconds
+  
+  setTimeout(function() {
+    animation.style.display = 'none';
+  }, 2000); // Fully hide after 2 seconds
+});

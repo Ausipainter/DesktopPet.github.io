@@ -435,3 +435,21 @@ header img {
 .batman-container:hover .batman-hover {
   opacity: 1;
 }
+
+
+#animation {
+  position: absolute;
+  display: none;
+  pointer-events: none; /* So clicks pass through the animation */
+  transform: translate(-50%, -10%); /* Center the animation on click point */
+  z-index: 9999; /* Make sure it appears on top */
+  transition: opacity 0.5s ease;
+  opacity: 0;
+  width: 50px; /* Adjust size as needed */
+}
+
+#animation img,
+#animation .tenor-gif-embed {
+  width: 100%;
+  height: auto;
+}
