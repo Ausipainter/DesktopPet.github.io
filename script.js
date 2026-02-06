@@ -117,7 +117,7 @@ window.addEventListener('scroll', () => {
             }
             
             wrappers.forEach((wrapper, index) => {
-                const offset = (index - 2) * wrapperHeight; // -2 because we have 2 clones before the original
+                const offset = (index - 2) * wrapperHeight; 
                 wrapper.style.transform = `translateY(${offset - loopedMovement}px)`;
             });
         }
@@ -146,7 +146,7 @@ function checkCollision(element1, element2) {
 }
 
 document.addEventListener('keydown', (event) => {
-    // Make cube AND target visible on first arrow key press
+   
     if (!cubeVisible && ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(event.key)) {
         cube.classList.add('visible');
         target.classList.add('visible');
@@ -166,7 +166,7 @@ document.addEventListener('keydown', (event) => {
         x += speed;
     }
     
-    // Keep cube on screen
+    
     x = Math.max(0, Math.min(window.innerWidth - cubeSize, x));
     y = Math.max(0, Math.min(window.innerHeight - cubeSize, y));
     
